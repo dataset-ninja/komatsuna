@@ -13,37 +13,46 @@ from dataset_tools.templates import (
 ##################################
 # * Before uploading to instance #
 ##################################
-PROJECT_NAME: str = None
-PROJECT_NAME_FULL: str = None
+PROJECT_NAME: str = "KOMATSUNA"
+PROJECT_NAME_FULL: str = "KOMATSUNA Dataset for Instance Segmentation, Tracking and Reconstruction"
 HIDE_DATASET = True  # set False when 100% sure about repo quality
 
 ##################################
 # * After uploading to instance ##
 ##################################
-LICENSE: License = None
-APPLICATIONS: List[Union[Industry, Domain, Research]] = None
-CATEGORY: Category = None
+LICENSE: License = License.PubliclyAvailable(
+    source_url="https://openaccess.thecvf.com/content_ICCV_2017_workshops/papers/w29/Uchiyama_An_Easy-To-Setup_3D_ICCV_2017_paper.pdf"
+)
+APPLICATIONS: List[Union[Industry, Domain, Research]] = [Research.Biological()]
+CATEGORY: Category = Category.Biology()
 
-CV_TASKS: List[CVTask] = None
-ANNOTATION_TYPES: List[AnnotationType] = None
+CV_TASKS: List[CVTask] = [
+    CVTask.InstanceSegmentation(),
+    CVTask.SemanticSegmentation(),
+    CVTask.ObjectDetection(),
+    CVTask.MonocularDepthEstimation(),
+]
+ANNOTATION_TYPES: List[AnnotationType] = [AnnotationType.InstanceSegmentation()]
 
 RELEASE_DATE: Optional[str] = None  # e.g. "YYYY-MM-DD"
 if RELEASE_DATE is None:
-    RELEASE_YEAR: int = None
+    RELEASE_YEAR: int = 2017
 
-HOMEPAGE_URL: str = None
+HOMEPAGE_URL: str = "https://limu.ait.kyushu-u.ac.jp/~agri/komatsuna/"
 # e.g. "https://some.com/dataset/homepage"
 
-PREVIEW_IMAGE_ID: int = None
+PREVIEW_IMAGE_ID: int = 11632625
 # This should be filled AFTER uploading images to instance, just ID of any image.
 
-GITHUB_URL: str = None
+GITHUB_URL: str = "https://github.com/dataset-ninja/komatsuna"
 # URL to GitHub repo on dataset ninja (e.g. "https://github.com/dataset-ninja/some-dataset")
 
 ##################################
 ### * Optional after uploading ###
 ##################################
-DOWNLOAD_ORIGINAL_URL: Optional[Union[str, dict]] = None
+DOWNLOAD_ORIGINAL_URL: Optional[
+    Union[str, dict]
+] = "https://limu.ait.kyushu-u.ac.jp/~agri/komatsuna/"
 # Optional link for downloading original dataset (e.g. "https://some.com/dataset/download")
 
 CLASS2COLOR: Optional[Dict[str, List[str]]] = None
@@ -51,18 +60,41 @@ CLASS2COLOR: Optional[Dict[str, List[str]]] = None
 
 # If you have more than the one paper, put the most relatable link as the first element of the list
 # Use dict key to specify name for a button
-PAPER: Optional[Union[str, List[str], Dict[str, str]]] = None
+PAPER: Optional[Union[str, List[str], Dict[str, str]]] = {
+    "Research Paper": "https://openaccess.thecvf.com/content_ICCV_2017_workshops/papers/w29/Uchiyama_An_Easy-To-Setup_3D_ICCV_2017_paper.pdf",
+    "RGBD Readme": "https://limu.ait.kyushu-u.ac.jp/~agri/komatsuna/rgbd_readme.pdf",
+    "Multi-View Readme": "https://limu.ait.kyushu-u.ac.jp/~agri/komatsuna/multi_readme.pdf",
+}
 BLOGPOST: Optional[Union[str, List[str], Dict[str, str]]] = None
 REPOSITORY: Optional[Union[str, List[str], Dict[str, str]]] = None
 
-CITATION_URL: Optional[str] = None
-AUTHORS: Optional[List[str]] = None
+CITATION_URL: Optional[str] = "https://openaccess.thecvf.com/ICCV2017_workshops/ICCV2017_W29"
+AUTHORS: Optional[List[str]] = [
+    "Hideaki Uchiyama",
+    "Shunsuke Sakurai",
+    "Masashi Mishima",
+    "Daisaku Arita",
+    "Takashi Okayasu",
+    "Atsushi Shimada",
+    "Rin-ichiro Taniguchi",
+]
+AUTHORS_CONTACTS: Optional[List[str]] = ["agri@limu.ait.kyushu-u.ac.jp"]
 
-ORGANIZATION_NAME: Optional[Union[str, List[str]]] = None
-ORGANIZATION_URL: Optional[Union[str, List[str]]] = None
+ORGANIZATION_NAME: Optional[Union[str, List[str]]] = ["Kyushu University, Japan"]
+ORGANIZATION_URL: Optional[Union[str, List[str]]] = ["https://www.kyushu-u.ac.jp/en/"]
 
 # Set '__PRETEXT__' or '__POSTTEXT__' as a key with string value to add custom text. e.g. SLYTAGSPLIT = {'__POSTTEXT__':'some text}
-SLYTAGSPLIT: Optional[Dict[str, Union[List[str], str]]] = None
+SLYTAGSPLIT: Optional[Dict[str, Union[List[str], str]]] = {
+    "image splits": [
+        "multi_original",
+        "multi_plant",
+        "rgbd_original",
+        "rgbd_plant",
+        "rgbd_depth",
+        "rgbd_depth_ours",
+    ],
+    "__POSTTEXT__": "Additionally, images are grouped by ***im_id***, and every *leaf* has ***old*** tag. Explore it in supervisely labeling tool",
+}
 TAGS: Optional[List[str]] = None
 
 
@@ -110,6 +142,7 @@ def get_settings():
     settings["repository"] = REPOSITORY
     settings["citation_url"] = CITATION_URL
     settings["authors"] = AUTHORS
+    settings["authors_contacts"] = AUTHORS_CONTACTS
     settings["organization_name"] = ORGANIZATION_NAME
     settings["organization_url"] = ORGANIZATION_URL
     settings["slytagsplit"] = SLYTAGSPLIT
