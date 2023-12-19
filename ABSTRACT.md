@@ -1,24 +1,20 @@
 The authors of the **KOMATSUNA** dataset present a 3D phenotyping platform designed to measure both plant growth and environmental information within small indoor environments, specifically tailored for plant image datasets. The primary objective is to create a comprehensive and compact platform using readily available commercial devices, enabling researchers to initiate plant phenotyping in their laboratories. The dataset showcased includes *rgb-d* and *multi-view* images depicting the early growth stages of Komatsuna, complete with leaf annotations.
 
-### Motivation
+## Motivation
 
 Plant growth is influenced by various factors, including plant seeds, temperature, CO2, solar radiation, soil, and fertilizers. The appearance characteristics of a plant, known as its phenotype, result from the interplay between genetic properties and environmental conditions. Understanding this complex relationship is crucial for enhancing the quality and quantity of plant cultivation.
 
 The authors meticulously selected the Komatsuna plant species for its growth properties, resilience to insects, and rapid growth in indoor environments. Hydroponic culture, chosen for its cleanliness and automation advantages, was adopted over traditional soil culture. The authors selected a hydroponic culture toolkit designed for small kitchen gardens, facilitating constant cultivation without daily maintenance.
 
-<img src="https://github.com/dataset-ninja/komatsuna/assets/78355358/414db6d0-6c90-42bd-bea1-72e1fb5b3ae7" alt="image" width="800">
+<img src="https://github.com/dataset-ninja/komatsuna/assets/78355358/414db6d0-6c90-42bd-bea1-72e1fb5b3ae7" alt="image" width="400">
 
 <span style="font-size: smaller; font-style: italic;">Platform to create KOMATSUNA datasets in indoor environments. To cultivate plants, a compact and complete platform for 3D plant phenotyping was developed using commercial devices only.</span>
 
-### Lighting
+## Lighting, Sensors and Cameras
 
 Controlling lighting conditions is essential for indoor plant growth. The authors employed controllable switches for power sources, enabling programmable lighting durations. They utilized three types of lights—incandescent, fluorescent, and LED lights—opting for LED lights due to their controllability and spectrum composition. The Philips hue with programmable features was chosen, and its arrangement around the hydroponic culture toolkit was carefully considered.
 
-### Sensors for Environmental Information
-
 To measure temperature, humidity, and light intensity, the authors utilized a Sony MESH device. This compact and cost-effective IoT device constantly measured and transferred data to a smartphone through Bluetooth. Lux was used as a simplified index for light intensity, although photosynthetic photon flux density (PPFD) is considered more appropriate for biological studies.
-
-### Cameras
 
 Two imaging systems were developed using an RGB-D camera (Intel RealSense SR300) and multiple high-resolution RGB cameras (FLIR cameras with Kowa lenses). The RGB-D camera was optimized for short-range capture, while the multiple RGB cameras addressed the low resolution of depth images, ensuring clear capture of plant shapes.
 

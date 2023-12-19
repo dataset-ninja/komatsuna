@@ -15,7 +15,7 @@ from dataset_tools.templates import (
 ##################################
 PROJECT_NAME: str = "KOMATSUNA"
 PROJECT_NAME_FULL: str = "KOMATSUNA Dataset for Instance Segmentation, Tracking and Reconstruction"
-HIDE_DATASET = True  # set False when 100% sure about repo quality
+HIDE_DATASET = False  # set False when 100% sure about repo quality
 
 ##################################
 # * After uploading to instance ##
