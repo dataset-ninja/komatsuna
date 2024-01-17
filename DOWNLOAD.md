@@ -1,6 +1,6 @@
 Dataset **KOMATSUNA** can be downloaded in [Supervisely format](https://developer.supervisely.com/api-references/supervisely-annotation-json-format):
 
- [Download](https://www.dropbox.com/scl/fi/pdsua58tgdzml950fow11/komatsuna-DatasetNinja.tar?rlkey=bhnrpo8dgbc9db7fzxx17596r&dl=1)
+ [Download](https://www.dropbox.com/scl/fi/jdxfp3it9bq2k77k4fdde/komatsuna-DatasetNinja.tar?rlkey=ytjfevycl1tx0oi4cbrgi13y4&dl=1)
 
 As an alternative, it can be downloaded with *dataset-tools* package:
 ``` bash
