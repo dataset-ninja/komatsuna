@@ -95,7 +95,7 @@ SLYTAGSPLIT: Optional[Dict[str, Union[List[str], str]]] = {
     ],
     "__POSTTEXT__": "Additionally, images are grouped by ***im_id***, and every *leaf* has ***old*** tag. Explore it in supervisely labeling tool",
 }
-TAGS: Optional[List[str]] = None
+TAGS: Optional[List[str]] = ['multi-view']
 
 
 SECTION_EXPLORE_CUSTOM_DATASETS: Optional[List[str]] = None
