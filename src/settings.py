@@ -50,9 +50,9 @@ GITHUB_URL: str = "https://github.com/dataset-ninja/komatsuna"
 ##################################
 ### * Optional after uploading ###
 ##################################
-DOWNLOAD_ORIGINAL_URL: Optional[
-    Union[str, dict]
-] = "https://limu.ait.kyushu-u.ac.jp/~agri/komatsuna/"
+DOWNLOAD_ORIGINAL_URL: Optional[Union[str, dict]] = (
+    "https://limu.ait.kyushu-u.ac.jp/~agri/komatsuna/"
+)
 # Optional link for downloading original dataset (e.g. "https://some.com/dataset/download")
 
 CLASS2COLOR: Optional[Dict[str, List[str]]] = None
